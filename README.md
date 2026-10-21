@@ -67,7 +67,22 @@ Think of `students` as a register containing every student's record.
 Your function is:
 
 ```
-def calculate_result(marks):    total = sum(marks.values())    percentage = total / len(marks)    if percentage >= 90:        grade = "A+"    elif percentage >= 80:        grade = "A"    elif percentage >= 70:        grade = "B"    elif percentage >= 60:        grade = "C"    elif percentage >= 50:        grade = "D"    else:        grade = "F"    return total, percentage, grade
+def calculate_result(marks):
+    total = sum(marks.values())
+    percentage = total / len(marks)
+    if percentage >= 90:
+        grade = "A+"
+    elif percentage >= 80:
+        grade = "A"
+    elif percentage >= 70:
+        grade = "B"
+    elif percentage >= 60:
+        grade = "C"
+    elif percentage >= 50:
+        grade = "D"
+    else:
+        grade = "F"
+    return total, percentage, grade
 ```
 
 Let's break it down.
@@ -93,7 +108,10 @@ total = sum(marks.values())
 Suppose `marks` contains:
 
 ```
-marks = {    "Python": 95,    "Mathematics": 85,    "Data Science": 90}
+marks = {
+    "Python": 95,
+    "Mathematics": 85,
+    "Data Science": 90}
 ```
 
 `marks.values()` returns the marks:
@@ -130,7 +148,10 @@ Important: Your code assumes every subject is marked out of 100. Because you hav
 ### D. Assign a grade
 
 ```
-if percentage >= 90:    grade = "A+"elif percentage >= 80:    grade = "A"
+if percentage >= 90:
+    grade = "A+"
+elif percentage >= 80:
+    grade = "A"
 ```
 
 Python checks the conditions from top to bottom.
@@ -174,7 +195,14 @@ Notice the difference: `print()` displays something on the screen, while `return
 Your function:
 
 ```
-def add_student():    name = input("Enter student name: ")    marks = {}    subjects = ["Python", "Mathematics", "Data Science"]    for subject in subjects:        marks[subject] = float(            input(f"Enter marks for {subject}: ")        )    students[name] = marks    print("Student added successfully!")
+def add_student():
+    name = input("Enter student name: ")
+    marks = {}
+    subjects = ["Python", "Mathematics", "Data Science"]
+    for subject in subjects:
+        marks[subject] = float(input(f"Enter marks for {subject}: "))
+    students[name] = marks
+       print("Student added successfully!")
 ```
 
 ### A. Get the student's name
@@ -274,7 +302,10 @@ One thing to remember: If you add another student using exactly the same name, t
 Your function begins with:
 
 ```
-def display_students():    if not students:        print("No student records found.")        return
+def display_students():
+    if not students:
+        print("No student records found.")
+        return
 ```
 
 `if not students` checks whether the dictionary is empty.
@@ -294,7 +325,10 @@ for name, marks in students.items():
 For example:
 
 ```
-name = "Umair"marks = {    "Python": 95.0,    "Mathematics": 85.0,    "Data Science": 90.0}
+name = "Umair"marks = {
+    "Python": 95.0,
+    "Mathematics": 85.0,
+    "Data Science": 90.0}
 ```
 
 Then this line calls your calculation function:
@@ -308,7 +342,12 @@ Python receives the three returned values and assigns them to three variables.
 Finally, the program prints the result:
 
 ```
-print("\n" + "=" * 40)print(f"Name       : {name}")print(f"Marks      : {marks}")print(f"Total      : {total}")print(f"Percentage : {percentage:.2f}%")print(f"Grade      : {grade}")
+print("\n" + "=" * 40)
+print(f"Name       : {name}")
+print(f"Marks      : {marks}")
+print(f"Total      : {total}")
+print(f"Percentage : {percentage:.2f}%")
+print(f"Grade      : {grade}")
 ```
 
 Some syntax worth understanding:
@@ -324,14 +363,23 @@ Here is what the output might look like:
 
 SAMPLE TERMINAL OUTPUT
 
-\======================================== Name       : Umair Marks      : {'Python': 95.0, 'Mathematics': 85.0, 'Data Science': 90.0} Total      : 270.0 Percentage : 90.00% Grade      : A+
+\======================================== 
+Name       : Umair 
+Marks      : {'Python': 95.0, 'Mathematics': 85.0, 'Data Science': 90.0}
+Total      : 270.0 Percentage : 90.00% 
+Grade      : A+
 
 # 6. The main menu and infinite loop
 
 This is the part that keeps the program running:
 
 ```
-while True:    print("\n===== STUDENT MANAGEMENT SYSTEM =====")    print("1. Add Student")    print("2. Display Students")    print("3. Exit")    choice = input("Enter choice: ")
+while True:
+print("\n===== STUDENT MANAGEMENT SYSTEM =====")
+print("1. Add Student")
+print("2. Display Students")
+print("3. Exit")
+choice = input("Enter choice: ")
 ```
 
 `while True` creates a loop that repeats indefinitely unless something stops it.
@@ -341,7 +389,14 @@ Every time the loop runs, it shows the menu and asks the user to choose an optio
 Your conditions are:
 
 ```
-if choice == "1":    add_student()elif choice == "2":    display_students()elif choice == "3":    print("Program terminated.")    breakelse:    print("Invalid choice.")
+if choice == "1":
+add_student()
+elif choice == "2":
+display_students()
+elif choice == "3":
+print("Program terminated.")
+breakelse:
+print("Invalid choice.")
 ```
 
 | Code    | Meaning                                                 |
