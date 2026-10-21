@@ -48,7 +48,10 @@ A dictionary stores information as key-value pairs.
 For example, after adding a student, it might look like this:
 
 ```
-students = {    "Umair": {        "Python": 95,        "Mathematics": 85,        "Data Science": 90    }}
+students = {    "Umair": {
+        "Python": 95,
+        "Mathematics": 85,
+        "Data Science": 90    }}
 ```
 
 Here:
