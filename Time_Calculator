@@ -1,0 +1,24 @@
+def add_time(start, duration):
+
+    start_parts = start.split()
+    time_part = start_parts[0]
+    period = start_parts[1].upper()
+
+    start_hour, start_minute = map(int, time_part.split(":"))
+    duration_hour, duration_minute = map(int, duration.split(":"))
+
+    # Convert 12-hour time to 24-hour time
+    if period == "PM" and start_hour != 12:
+        start_hour += 12
+
+    if period == "AM" and start_hour == 12:
+        start_hour = 0
+
+    total_minutes = (
+        start_hour * 60
+        + start_minute
+        + duration_hour * 60
+        + duration_minute
+    )
+
+    
