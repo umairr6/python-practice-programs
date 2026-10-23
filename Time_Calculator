@@ -22,3 +22,29 @@ def add_time(start, duration):
     )
 
     
+days_later = total_minutes // (24 * 60)
+    total_minutes %= (24 * 60)
+
+    final_hour = total_minutes // 60
+    final_minute = total_minutes % 60
+
+    final_period = "PM" if final_hour >= 12 else "AM"
+
+    display_hour = final_hour % 12
+
+    if display_hour == 0:
+        display_hour = 12
+
+    result = f"{display_hour}:{final_minute:02d} {final_period}"
+
+    if days_later == 1:
+        result += " (next day)"
+    elif days_later > 1:
+        result += f" ({days_later} days later)"
+
+    return result
+
+
+print(add_time("3:00 PM", "2:30"))
+print(add_time("11:30 PM", "2:30"))
+print(add_time("8:00 AM", "24:00"))
